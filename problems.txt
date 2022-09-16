@@ -1,0 +1,26 @@
+Day 1:
+Largest of 3 integers
+
+Day 2:
+Primality testing
+All primes till N
+N terms of Fibonacci sequence
+Pascal's triangle pattern
+
+Day 3:
+Count digits in an integer
+Reverse an integer
+
+Day 4:
+Patterns using nst and nsp method
+
+Day 5:
+Patterns using gap method
+Patterns with Fibonacci sequence, Pascal's triangle
+
+Day 6:
+More patterns
+
+Day 7:
+Even more patterns
+Idea of filling in spaces with stars and recognizing a standard pattern
