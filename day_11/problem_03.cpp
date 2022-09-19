@@ -36,5 +36,7 @@ int main()
 
     VerticalBarChart(arr, N);
 
+    delete [] arr;
+
     return 0;
 }

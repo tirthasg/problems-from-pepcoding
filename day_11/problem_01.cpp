@@ -25,5 +25,7 @@ int main()
     int result = GetIndex(arr, N, key);
     cout << result << endl;
 
+    delete [] arr;
+
     return 0;
 }

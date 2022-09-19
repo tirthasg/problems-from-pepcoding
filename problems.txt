@@ -41,3 +41,22 @@ Multiply in any base
 Printing elements of array
 Sum of elements of array 
 Span of array
+
+Day 11:
+Linear search
+Horizontal bar chart of array
+Vertical bar chart of array 
+Sum of numbers as array elements
+Difference of numbers as array elements
+
+Day 12:
+Reverse an array
+Rotate an array (Left and Right)
+Inverse of an array
+Sub-arrays of an array
+
+Day 13:
+Sub-sets of an array
+Binary search
+Ceil and Floor of value in sorted array 
+First and Last index of value in sorted array

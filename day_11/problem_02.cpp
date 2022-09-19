@@ -28,5 +28,7 @@ int main()
 
     HorizontalBarChart(arr, N);
 
+    delete [] arr;
+
     return 0;
 }

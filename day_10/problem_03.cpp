@@ -22,5 +22,7 @@ int main()
     int result = GetArraySum(arr, N);
     cout << result << endl;
 
+    delete [] arr;
+
     return 0;
 }

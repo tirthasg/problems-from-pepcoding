@@ -28,5 +28,7 @@ int main()
     int result = GetArraySpan(arr, N);
     cout << result << endl;
 
+    delete [] arr;
+
     return 0;
 }
