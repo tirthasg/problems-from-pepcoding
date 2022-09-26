@@ -6,15 +6,13 @@ int main()
     int N;
     cin >> N;
 
-    int i = 1, j;
-    while (i <= N) {
-        j = 1;
-        while (j <= i) {
+    int nst = 1;
+    for (int i = 1; i <= N; i++) {
+        for (int j = 1; j <= nst; j++)
             cout << "*\t";
-            j++;
-        }
         cout << endl;
-        i++;
+
+        nst++;
     }
 
     return 0;

@@ -6,17 +6,16 @@ int main()
     int N;
     cin >> N;
 
-    int i = 1, j, val;
-    while (i <= N) {
+    int nst = 1, val;
+    for (int i = 1; i <= N; i++) {
         val = 1;
-        j = 1;
-        while (j <= i) {
+        for (int j = 1; j <= nst; j++) {
             cout << val << "\t";
             val = val * (i - j) / j;
-            j++;
         }
         cout << endl;
-        i++;
+
+        nst++;
     }
 
     return 0;

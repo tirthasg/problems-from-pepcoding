@@ -3,44 +3,39 @@ using namespace std;
 
 int main()
 {
-    int N = 9;
+    int N;
+    cin >> N;
+    
+    if ((N & 1) == 0)
+        N++;
 
-    int i = 1, j;
-    while (i <= N) {
-        j = 1;
-        while (j <= N) {
-            if (i == 1) {
-                if (j == 1 || j >= N / 2 + 1)
-                    cout << "*\t";
-                else 
+    for (int i = 1; i <= N; i++) {
+        for (int j = 1; j <= N; j++) {
+            if (i == 1)
+                if (j > 1 && j < N / 2 + 1)
                     cout << "\t";
-            }
-            else if (i <= N / 2) {
+                else 
+                    cout << "*\t";
+            else if (i < N / 2 + 1) 
                 if (j == 1 || j == N / 2 + 1)
                     cout << "*\t";
                 else 
                     cout << "\t";
-            }
-            else if (i == N / 2 + 1) {
+            else if (i == N / 2 + 1)
                 cout << "*\t";
-            }
-            else if (i < N) {
+            else if (i < N)
                 if (j == N / 2 + 1 || j == N)
                     cout << "*\t";
                 else 
                     cout << "\t";
-            }
-            else {
-                if (j <= N / 2 + 1 || j == N)
-                    cout << "*\t";
-                else 
+            else 
+                if (j > N / 2 + 1 && j < N)
                     cout << "\t";
-            }
-            j++;
+                else 
+                    cout << "*\t";
         }
         cout << endl;
-        i++;
     }
-
+    
     return 0;
 }

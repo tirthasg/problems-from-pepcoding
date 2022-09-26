@@ -6,8 +6,18 @@ int main()
     int N;
     cin >> N;
 
-    int i = 1, j;
-    while (i <= N) {
+    int nsp = N - 1, nst = 1;
+    for (int i = 1; i <= N; i++) {
+        for (int j = 1; j <= nsp; j++)
+            cout << "\t";
         
+        for (int j = 1; j <= nst; j++)
+            cout << "*\t";
+        cout << endl;
+        
+        nsp--;
+        nst++;
     }
+
+    return 0;
 }

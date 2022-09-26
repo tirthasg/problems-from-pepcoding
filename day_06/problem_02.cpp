@@ -9,59 +9,31 @@ int main()
     if ((N & 1) == 0)
         N++;
 
-    int i = 1, j, val;
-    while (i <= N / 2 + 1) {
-        j = 1;
-        while (j <= N / 2 + 1 - i) {
+    int nsp = N / 2, nst = 1, oval = 1, val;
+    for (int i = 1; i <= N; i++) {
+        for (int j = 1; j <= nsp; j++)
             cout << "\t";
-            j++;
-        }
-
-        val = i;
-        j = 1;
-        while (j <= i) {
+        
+        val = oval;
+        for (int j = 1; j <= nst; j++) {
             cout << val << "\t";
-            val++;
-            j++; 
-        }
-
-        val -= 2;
-        j = 1;
-        while (j <= i - 1) {
-            cout << val << "\t";
-            val--;
-            j++;
+            if (j <= nst / 2)
+                val++;
+            else 
+                val--;
         }
         cout << endl;
-        i++;
-    }
 
-    i = 1;
-    N -= N / 2 + 1;
-    while (i <= N) {
-        j = 1;
-        while (j <= i) {
-            cout << "\t";
-            j++;
+        if (i <= N / 2) {
+            nsp--;
+            nst += 2;
+            oval++;
         }
-
-        val = N - i + 1;
-        j = 1;
-        while (j <= N - i + 1) {
-            cout << val << "\t";
-            val++;
-            j++;
+        else {
+            nsp++;
+            nst -= 2;
+            oval--;
         }
-
-        val -= 2;
-        j = 1;
-        while (j <= N - i) {
-            cout << val << "\t";
-            val--;
-            j++;
-        }
-        cout << endl;
-        i++;
     }
 
     return 0;

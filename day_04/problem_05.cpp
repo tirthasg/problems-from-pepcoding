@@ -6,22 +6,27 @@ int main()
     int N;
     cin >> N;
 
-    int i = 1, j;
-    while (i <= N) {
-        j = 1;
-        while (j <= N - i) {
+    if ((N & 1) == 0)
+        N++;
+    
+    int nsp = N / 2, nst = 1;
+    for (int i = 1; i <= N; i++) {
+        for (int j = 1; j <= nsp; j++)
             cout << "\t";
-            j++;
-        }
-
-        j = 1;
-        while (j <= i) {
+        
+        for (int j = 1; j <= nst; j++)
             cout << "*\t";
-            j++;
-        }
         cout << endl;
-        i++;
-    }
 
+        if (i <= N / 2) {
+            nsp--;
+            nst += 2;
+        }
+        else {
+            nsp++;
+            nst -= 2;
+        }
+    }
+    
     return 0;
 }

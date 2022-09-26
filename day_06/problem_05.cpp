@@ -3,18 +3,18 @@ using namespace std;
 
 int main()
 {
-    int N = 9;
+    int N;
+    cin >> N;
 
-    int i = 1, j, nsp = 0, nst = N;
-    while (i <= N) {
-        j = 1;
-        while (j <= nsp) {
+    if ((N & 1) == 0)
+        N++;
+
+    int nsp = 0, nst = N;
+    for (int i = 1; i <= N; i++) {
+        for (int j = 1; j <= nsp; j++)
             cout << "\t";
-            j++;
-        }
 
-        j = 1;
-        while (j <= nst) {
+        for (int j = 1; j <= nst; j++) {
             if (i > 1 && i <= N / 2)
                 if (j == 1 || j == nst)
                     cout << "*\t";
@@ -22,7 +22,6 @@ int main()
                     cout << "\t";
             else 
                 cout << "*\t";
-            j++;
         }
         cout << endl;
 
@@ -34,8 +33,6 @@ int main()
             nsp--;
             nst += 2;
         }
-
-        i++;
     }
 
     return 0;

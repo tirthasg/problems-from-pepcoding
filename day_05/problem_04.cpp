@@ -9,47 +9,27 @@ int main()
     if ((N & 1) == 0)
         N++;
     
-    int i = 1, j;
-    while (i <= N / 2 + 1) {
-        j = 1;
-        while (j <= N / 2 + 1 - i) {
+    int nsp1 = N / 2, nsp2 = -1;
+    for (int i = 1; i <= N; i++) {
+        for (int j = 1; j <= nsp1; j++)
             cout << "\t";
-            j++;
-        }
         cout << "*\t";
-        
-        j = 1;
-        while (j <= 2 * (i - 1) - 1) {
-            cout << "\t";
-            j++;
-        }
-        
-        if (i != 1)
-            cout << "*\t";
-        cout << endl;
-        i++;
-    }
-    
-    i = 1;
-    N -= N / 2 + 1;
-    while (i <= N) {
-        j = 1;
-        while (j <= i) {
-            cout << "\t";
-            j++;
-        }
-        cout << "*\t";
-        
-        j = 1;
-        while (j <= 2 * (N - i) - 1) {
-            cout << "\t";
-            j++;
-        }
 
-        if (i != N)
+        for (int j = 1; j <= nsp2; j++)
+            cout << "\t";
+        
+        if (i != 1 && i != N)
             cout << "*";
         cout << endl;
-        i++;
+
+        if (i <= N / 2) {
+            nsp1--;
+            nsp2 += 2;
+        }
+        else {
+            nsp1++;
+            nsp2 -= 2;
+        }
     }
     
     return 0;

@@ -3,20 +3,20 @@ using namespace std;
 
 int main()
 {
-    int N = 5;
+    int N;
+    cin >> N;
 
-    int i = 1, j, val = 1;
+    int nst = 1, val = 1;
     char ch = 'A';
-    while (i <= N) {
-        j = 1;
-        while (j <= i) {
+    for (int i = 1; i <= N; i++) {
+        for (int j = 1; j <= nst; j++) {
             cout << ch << val << "\t";
             ch++;
             val++;
-            j++;
         }
         cout << endl;
-        i++;
+
+        nst++;
     }
 
     return 0;

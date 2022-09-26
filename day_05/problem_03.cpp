@@ -9,43 +9,13 @@ int main()
     if ((N & 1) == 0)
         N++;
     
-    int i = 1, j;
-    while (i <= N / 2) {
-        j = 1;
-        while (j <= i - 1) {
-            cout << "\t";
-            j++;
-        }
-        cout << "*\t";
-        
-        j = 1;
-        while (j <= 2 * (N / 2 - i) + 1) {
-            cout << "\t";
-            j++;
-        }
-        cout << "*" << endl;
-        i++;
-    }
-    
-    i = 1;
-    N -= N / 2;
-    while (i <= N) {
-        j = 1;
-        while (j <= N - i) {
-            cout << "\t";
-            j++;
-        }
-        cout << "*\t";
-        
-        j = 1;
-        while (j <= 2 * (i - 1) - 1) {
-            cout << "\t";
-            j++;
-        }
-        if (i != 1)
-            cout << "*\t";
+    for (int i = 1; i <= N; i++) {
+        for (int j = 1; j <= N; j++)
+            if (i - j == 0 || i + j == N + 1)
+                cout << "*\t";
+            else 
+                cout << "\t";
         cout << endl;
-        i++;
     }
     
     return 0;

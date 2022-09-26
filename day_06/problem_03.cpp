@@ -6,43 +6,32 @@ int main()
     int N;
     cin >> N;
 
-    int i = 1, j, val;
-    while (i <= N - 1) {
+    int nst = 1, nsp = 2 * N - 3, val;
+    for (int i = 1; i <= N; i++) {
         val = 1;
-        j = 1;
-        while (j <= i) {
+        for (int j = 1; j <= nst; j++) {
             cout << val << "\t";
             val++;
-            j++; 
         }
-
-        j = 1;
-        while (j <= 2 * (N - i) - 1) {
+        
+        for (int j = 1; j <= nsp; j++)
             cout << "\t";
-            j++;
+        
+        if (i == N) {
+            nst--;
+            val--;
         }
-
-        j = 1;
-        while (j <= i) {
-            cout << i - j + 1 << "\t";
-            j++;
+        
+        val--;
+        for (int j = 1; j <= nst; j++) {
+            cout << val << "\t";
+            val--;
         }
         cout << endl;
-        i++;
-    }
 
-    j = 1;
-    while (j <= N) {
-        cout << j << "\t";
-        j++;
+        nst++;
+        nsp -= 2;
     }
-
-    j -= 2;
-    while (j > 0) {
-        cout << j << "\t";
-        j--;
-    }
-    cout << endl;
 
     return 0;
 }

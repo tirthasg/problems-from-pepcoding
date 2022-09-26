@@ -3,38 +3,37 @@ using namespace std;
 
 int main()
 {
-    int N = 7;
+    int N;
+    cin >> N;
+    
+    if ((N & 1) == 0)
+        N++;
 
-    int i = 1, j, nst = N / 2 + 1, nsp = 1, val;
+    int nst = N / 2 + 1, nsp = 1, val;
     char ch = 'A';
-    while (i <= N) {
+    for (int i = 1; i <= N; i++) {
         val = 1;
-        j = 1;
-        while (j <= nst) {
+        for (int j = 1; j <= nst; j++) {
             if (i & 1)
-                cout << ch++ << "\t";
+                cout << ch++;
             else 
-                cout << val++ << "\t";
-            j++;
-        }
-
-        j = 1;
-        while (j <= nsp) {
+                cout << val++;
             cout << "\t";
-            j++;
         }
-
+        
+        for (int j = 1; j <= nsp; j++)
+            cout << "\t";
+        
         val--;
-        j = 1;
-        while (j <= nst) {
+        for (int j = 1; j <= nst; j++) {
             if (i & 1)
-                cout << ch++ << "\t";
+                cout << ch++;
             else 
-                cout << val-- << "\t";
-            j++;
+                cout << val--;
+            cout << "\t";
         }
         cout << endl;
-
+        
         if (i <= N / 2) {
             nst--;
             nsp += 2;
@@ -43,9 +42,7 @@ int main()
             nst++;
             nsp -= 2;
         }
-
-        i++;
     }
-
+    
     return 0;
 }
