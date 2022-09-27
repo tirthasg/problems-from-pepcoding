@@ -1,27 +1,32 @@
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
-int GetDigitFrequency(int num, int digit)
-{   
-    if (num == digit)
+int GetFrequency(int digit, int number)
+{
+    number = abs(number);
+    
+    if (digit == number)
         return 1;
-
+        
     int frequency = 0;
-    while (num != 0) {
-        if (digit == num % 10)
-            frequency++;        
-        num /= 10;
+    while (number != 0) {
+        if (digit == number % 10)
+            frequency++;
+        
+        number /= 10;
     }
-
+    
     return frequency;
 }
 
 int main()
 {
-    int num, digit;
-    cin >> num >> digit;
-
-    cout << GetDigitFrequency(num, digit) << endl;
-
+    int digit, number;
+    cin >> digit >> number;
+    
+    int result = GetFrequency(digit, number);
+    cout << result << endl;
+    
     return 0;
 }

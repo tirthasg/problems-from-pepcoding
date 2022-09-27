@@ -1,15 +1,15 @@
 #include <iostream>
 using namespace std;
 
-int BaseToDecimal(int num, int base)
+int AnyBaseToDecimal(int number, int base)
 {
     int result = 0, digit, base_power = 1;
-    while (num != 0) {
-        digit = num % 10;
-        result += digit * base_power;
+    while (number != 0) {
+        digit = number % 10;
+        number /= 10;
         
+        result += base_power * digit;
         base_power *= base;
-        num /= 10;
     }
     
     return result;
@@ -17,10 +17,10 @@ int BaseToDecimal(int num, int base)
 
 int main()
 {
-    int num, base;
-    cin >> num >> base;
+    int number, base;
+    cin >> number >> base;
     
-    int result = BaseToDecimal(num, base);
+    int result = AnyBaseToDecimal(number, base);
     cout << result << endl;
     
     return 0;

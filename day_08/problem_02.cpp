@@ -1,15 +1,15 @@
 #include <iostream>
 using namespace std;
 
-int DecimalToBase(int num, int base)
+int DecimalToAnyBase(int number, int base)
 {
     int result = 0, digit, ten_power = 1;
-    while (num != 0) {
-        digit = num % base;
+    while (number != 0) {
+        digit = number % base;
+        number /= base;
+
         result += ten_power * digit;
-        
         ten_power *= 10;
-        num /= base;
     }
     
     return result;
@@ -17,10 +17,10 @@ int DecimalToBase(int num, int base)
 
 int main()
 {
-    int num, base;
-    cin >> num >> base;
+    int number, base;
+    cin >> number >> base;
     
-    int result = DecimalToBase(num, base);
+    int result = DecimalToAnyBase(number, base);
     cout << result << endl;
     
     return 0;
