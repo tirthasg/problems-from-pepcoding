@@ -1,31 +1,17 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
-void PrintArray(int arr[], int N)
-{
-    if (N <= 0)
-        return;
-    
-    int i = 0;
-    while (arr[i] == 0)
-        i++;
-    
-    for (; i < N; i++)
-        cout << arr[i] << " ";
-    cout << endl;
-}
-
-void ArrayDifference(int arr1[], int N1, int arr2[], int N2, int arr[], int N)
+void DifferenceOfArrays(int arr1[], int N1, int arr2[], int N2, int arr3[], int N)
 {
     int i = N1 - 1;
     int j = N2 - 1;
     int k = N - 1;
-    
     int borrow = 0;
-    while (j >= 0) {
-        int diff = arr2[j] - borrow;
-        if (i >= 0)
-            diff -= arr1[i];
+    while (k >= 0) {
+        int diff = arr1[i] - borrow;
+        if (j >= 0)
+            diff -= arr2[j];
         
         if (diff < 0) {
             diff += 10;
@@ -34,12 +20,28 @@ void ArrayDifference(int arr1[], int N1, int arr2[], int N2, int arr[], int N)
         else 
             borrow = 0;
             
-        arr[k] = diff;
+        arr3[k] = diff;
         
         i--;
         j--;
         k--;
     }
+}
+
+void PrintDifferenceArray(int arr[], int N)
+{
+    if (N <= 0)
+        return;
+    
+    int i = 0;
+    while (arr[i] == 0)
+        i++;
+    
+    while (i < N) {
+        cout << arr[i] << " ";
+        i++;
+    }
+    cout << endl;
 }
 
 int main()
@@ -58,15 +60,15 @@ int main()
     for (int i = 0; i < N2; i++)
         cin >> arr2[i];
         
-    int N3 = (N1 <= N2 ? N2 : N1);
-    int *arr = new int[N3];
+    int N3 = max(N1, N2);
+    int *arr3 = new int[N3];
     
-    ArrayDifference(arr1, N1, arr2, N2, arr, N3);
-    PrintArray(arr, N3);
+    DifferenceOfArrays(arr1, N1, arr2, N2, arr3, N3);
+    PrintDifferenceArray(arr3, N3);
 
     delete [] arr1;
     delete [] arr2;
-    delete [] arr;
+    delete [] arr3;
     
     return 0;
 }
