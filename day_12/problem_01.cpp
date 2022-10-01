@@ -21,7 +21,6 @@ void ReverseArray(int arr[], int N)
     int end = N - 1;
     while (start < end) {
         swap(arr[start], arr[end]);
-
         start++;
         end--;
     }

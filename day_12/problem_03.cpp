@@ -1,15 +1,6 @@
 #include <iostream>
 using namespace std;
 
-int *InverseArray(int arr[], int N)
-{
-    int *result = new int[N];
-    for (int i = 0; i < N; i++)
-        result[arr[i]] = i;
-    
-    return result;
-}
-
 void PrintArray(int arr[], int N)
 {
     if (N <= 0) {
@@ -23,6 +14,18 @@ void PrintArray(int arr[], int N)
     cout << endl;
 }
 
+int *InverseOfArray(int arr[], int N)
+{
+    if (N <= 0)
+        return;
+
+    int *result = new int[N];
+    for (int i = 0; i < N; i++)
+        result[arr[i]] = i;
+    
+    return result;
+}
+
 int main()
 {
     int N;
@@ -32,7 +35,9 @@ int main()
     for (int i = 0; i < N; i++)
         cin >> arr[i];
     
-    int *inv_arr = InverseArray(arr, N);
+    PrintArray(arr, N);
+
+    int *inv_arr = InverseOfArray(arr, N);
     PrintArray(inv_arr, N);
 
     delete [] arr;

@@ -2,11 +2,23 @@
 #include <utility>
 using namespace std;
 
-void ReverseArray(int arr[], int start, int end)
+void PrintArray(int arr[], int N)
+{
+    if (N <= 0) {
+        cout << "Array is empty" << endl;
+        return;
+    }
+
+    cout << "Elements of array: ";
+    for (int i = 0; i < N; i++)
+        cout << arr[i] << " ";
+    cout << endl;
+}
+
+void ReverseSubArray(int arr[], int start, int end)
 {
     while (start < end) {
         swap(arr[start], arr[end]);
-        
         start++;
         end--;
     }
@@ -14,26 +26,19 @@ void ReverseArray(int arr[], int start, int end)
 
 void RotateArray(int arr[], int N, int K)
 {
-    if (N == 0)
+    if (N <= 0)
         return;
     
-    K %= N;    
-    if (K < 0)
-        K += N;
-        
+    K %= N;
     if (K == 0)
         return;
-    
-    ReverseArray(arr, 0, N - 1);
-    ReverseArray(arr, 0, K - 1);
-    ReverseArray(arr, K, N - 1);
-}
 
-void PrintArray(int arr[], int N)
-{
-    for (int i = 0; i < N; i++)
-        cout << arr[i] << " ";
-    cout << endl;
+    if (K < 0)
+        K += N;
+    
+    ReverseSubArray(arr, 0, N - 1);
+    ReverseSubArray(arr, 0, K - 1);
+    ReverseSubArray(arr, K, N - 1);
 }
 
 int main()
@@ -48,6 +53,7 @@ int main()
     int K;
     cin >> K;
     
+    PrintArray(arr, N);
     RotateArray(arr, N, K);
     PrintArray(arr, N);
 
