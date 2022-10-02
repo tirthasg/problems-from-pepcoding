@@ -60,3 +60,29 @@ Sub-sets of an array
 Binary search
 Ceil and Floor of value in sorted array 
 First and Last index of value in sorted array
+
+Day 14:
+Fundamentals of 2-D arrays
+Dynamic allocation of 2-D arrays
+Printing 2-D arrays row-wise and column-wise
+Printing 2-D arrays snake-wise (Wakanada-1)
+Printing 2-D arrays spirally- Type 1, Type 2
+Matrix multiplication
+
+Day 15:
+Printing upper and lower-triangular matrices of a matrix
+Transpose of a matrix
+Rotate a matrix by 90 degrees clock-wise
+Printing principal diagonal and upper-triangular matrix of a matrix (Wakanada-2)
+Saddle price in a matrix
+
+Day 16:
+Print a shell of a matrix
+Ring rotate
+Search in sorted 2-D array
+Exit point in the matrix
+Print elements of diagonal and anti-diagonal of matrix
+Print diagonal elements of matrix
+Print anti-diagonal elements of matrix
+Print elements of matrix snakish-row-wise 
+Print elements of matrix snakish-column-wise
