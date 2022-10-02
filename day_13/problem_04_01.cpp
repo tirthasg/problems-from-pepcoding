@@ -4,7 +4,6 @@ using namespace std;
 int FirstIndexInArray(int arr[], int N, int value)
 {
     int result = -1;
-    
     int start = 0;
     int end = N - 1;
     while (start <= end) {
@@ -26,7 +25,6 @@ int FirstIndexInArray(int arr[], int N, int value)
 int LastIndexInArray(int arr[], int N, int value)
 {
     int result = -1;
-    
     int start = 0;
     int end = N - 1;
     while (start <= end) {
